@@ -1,0 +1,8 @@
+age=18
+if age>=21:
+    print "Let's get this party started."
+elif age>=18:
+    print "Let's go vote yeah party in the house."
+else:
+    print "You've got human rights, too."
+
