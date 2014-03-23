@@ -1,0 +1,32 @@
+
+contacts = {'Shannon': {'phone': '202-555-1234', 'twitter': '@svt827', 'github': '@shannonturner' }, 'Anupama': {'phone': '410-333-9876','twitter': '@iamtheanupama', 'github': '@apillalamarri'}}
+#print contacts['Shannon']['github']
+#print contacts['Shannon']
+
+#Looping through a dictionary by values
+
+#for contact in contacts.keys():
+#    print contact
+#    print contacts[contact]
+
+
+#for contact in sorted(contacts.keys()):
+#    print contact
+#    print contacts[contact]
+#    print contacts[contact]['phone']
+    
+#Looping through a dictionary by values
+
+#for contact_info in contacts.values():
+#    print contact_info
+
+#Looping through contacts by key/value pairs:
+
+#for contact, info in contacts.items():
+#    print contact, info
+
+for contact in sorted(contacts.keys()):
+    print "{0}'s contact information is:".format(contact)
+    print "\tPhone: {0}".format(contacts[contact]['phone'])
+    print "\tTwitter: {0}".format(contacts[contact]['twitter'])
+    print "\tGithub: {0}".format(contacts[contact]['github'])
