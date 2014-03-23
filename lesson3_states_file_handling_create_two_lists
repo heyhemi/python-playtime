@@ -1,0 +1,16 @@
+
+#creates two lists: one for abbreviated names, one for full names of states
+state_full_names=[]
+state_abbreviations=[]
+
+with open("states.csv", "r") as states_file:
+    states = states_file.read().split("\n")
+
+    for index, state in enumerate(states):
+        states[index] = states[index].split(",")
+        state_abbreviations.append(states[index][0])
+        state_full_names.append(states[index][1])
+    
+print state_abbreviations
+print state_full_names
+
