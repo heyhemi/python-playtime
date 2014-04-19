@@ -1,0 +1,15 @@
+def helloname(greeting_input):
+    
+    """
+    Returns a string containing 'Hello, <name>!'
+    Example:
+        print greeting ('Shannon')
+
+    Results in :
+    Hello, Shannon!
+    """
+    
+    greeting_input="Hello, {0}!".format(greeting_input)
+    return greeting_input
+
+print helloname('Shannon')
