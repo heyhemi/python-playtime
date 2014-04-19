@@ -1,2 +1,0 @@
-for week in range (100, 1, -1):
-	print "{0} bottles of beer on the wall, if one of those bottles should happen to fall, {1} bottles of beer on the wall.".format(week, week-1)
