@@ -1,0 +1,14 @@
+
+def pbj_while(bread):
+    
+    """
+    Returns a string letting you know how many sandwiches-worth of bread remains.
+    """
+
+    while bread >=2:
+        bread = bread-2
+        print "I'm making a sandwich! I have enough bread for {0} sandwiches.".format(bread/2)
+
+    return pbj_while
+
+pbj_while(48)
