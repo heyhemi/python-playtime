@@ -1,0 +1,93 @@
+# -*- coding: utf-8 -*-
+
+#Background: You have a dictionary with people's contact information. You want to display that information as an HTML table.
+
+contacts = {'Shannon': {'phone': '202-555-1234', 'twitter': '@svt827', 'github': '@shannonturner'}, 'Beyonce': {'phone': '303-404-9876', 'twitter': '@beyonce', 'github': '@bey'}, 'Tegan and Sara': {'phone': '301-777-3313', 'twitter': '@teganandsara', 'github': '@heartthrob'}}
+print "Here are the contacts\n"
+print contacts
+
+# Goal 1: Loop through that dictionary to print out everyone's contact information.
+
+# Sample output:
+
+# Shannon's contact information is:
+#   Phone: 202-555-1234
+#   Twitter: @svt827
+#   Github: @shannonturner 
+
+# Beyonce's contact information is:
+#   Phone: 303-404-9876
+#   Twitter: @beyonce
+#   Github: @bey
+
+print "Goal 1 Output\n"
+for contact in sorted(contacts.keys()):
+    print "{0}'s contact information is:".format(contact)
+    print "\tPhone: {0}".format(contacts[contact]['phone'])
+    print "\tTwitter: {0}".format(contacts[contact]['twitter'])
+    print "\tGithub: {0}\n".format(contacts[contact]['github'])
+
+# Goal 2:  Display that information as an HTML table. 
+
+# Sample output:
+
+# <table border="1">
+# <tr>
+# <td colspan="2"> Shannon </td>
+# </tr>
+# <tr>
+# <td> Phone: 202-555-1234 </td>
+# <td> Twitter: @svt827 </td>
+# <td> Github: @shannonturner </td>
+# </tr>
+# </table>
+
+print "Goal Output 2\n"
+print "<table border=""1"">"
+
+for contact in sorted(contacts.keys()):
+    print "<tr>"
+    print "<td colspan=""2""> {0} </td>".format(contact)
+    print "</tr>"
+    print "<tr>"
+    print "<td> Phone: {0} </td>".format(contacts[contact]['phone'])
+    print "<td> Twitter: {0} </td>".format(contacts[contact]['twitter'])
+    print "<td> Github: {0} </td>".format(contacts[contact]['github'])
+    print "</tr>"
+
+print "</table>"
+
+# Goal 3: Write all of the HTML out to a file called contacts.html and open it in your browser. Thanks much to @shinson for providing my cheat sheet on GitHub.
+
+print "\nGoal Output 3\n"
+
+with open("contacts.html", "w") as contacts_file:
+    contacts_file.write("\n<html>")
+    contacts_file.write("\n<body>")
+    contacts_file.write("\n<table border=""1"">")
+    for contact in sorted(contacts.keys()):
+        contacts_file.write("""
+                                <tr>
+                                \n<td colspan=""2"">{0} </td>
+                                \n</tr>
+                                \n<tr>
+                                <td> Phone: {1} </td>
+                                <td> Twitter: {2} </td>
+                                <td> Github: {3} </td>
+                                </tr>""".format(contact,contacts[contact]['phone'],contacts[contact]['twitter'],contacts[contact]['github']))
+    contacts_file.write("\n</table>")
+    contacts_file.write("\n</body>")
+    contacts_file.write("\n</html>")
+
+import webbrowser
+webbrowser.open_new_tab("contacts.html")
+
+# Goal 4: Instead of reading in the contacts from the dictionary above, read them in from contacts.csv, which you can find in lesson_07_(files). Much thanks to @elizabethAB on GitHub for my crib sheet.
+contacts_csv_dictionary = {}
+
+with open("contacts.csv", "r") as contacts_csv_file:
+    contacts=contacts_csv_file.read().split("\n")[1:]
+    for contact in contacts:
+        eachcontact = contact.split(',')
+        contacts_csv_dictionary[eachcontact[0]]={'phone' : eachcontact[1], 'twitter' : eachcontact[2], 'github' : eachcontact[3]}
+    print contacts_csv_dictionary
