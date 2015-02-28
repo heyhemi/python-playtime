@@ -37,6 +37,8 @@ if  bread >= 2 and jelly >= 1 and pb >=1:
             print "All done. Time to buy bread and peanut butter."
         elif pb < 1 and jelly <1 :
             print "All done. Time to buy peanut butter and jelly."
+        elif bread <2 and jelly <1:
+            print "All done. Time to buy bread and jelly."
         elif jelly <1:
             print "All done. Time to buy jelly."
         elif pb <1:
