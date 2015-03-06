@@ -1,0 +1,10 @@
+movie_titles =['Selma', 'Birdman', 'Captain America: The Winter Soldier', 'Guardians of the Galaxy', 'The Imitation Game']
+parental_ratings = ['PG-13','R','PG-13','PG-13','PG-13']
+bechdel_ratings = [3, 3, 3, 3, 2]
+imdb_ratings = [7.6, 8, 7.8, 8.2, 8.2]
+genres = ['Biography, Drama, History', 'Comedy, Drama', 'Action, Adventure, Sci-Fi', 'Action, Adventure, Sci-Fi', 'Biography, Drama, Thriller']
+
+
+for (movie, parental, bechdel, imdb, genre) in zip(movie_titles, parental_ratings, bechdel_ratings, imdb_ratings, genres):
+    print "{0}, {1}, {2}, {3}, {4}".format(movie, parental, bechdel, imdb, genre)
+
