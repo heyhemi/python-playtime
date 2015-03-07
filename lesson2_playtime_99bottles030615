@@ -1,0 +1,4 @@
+# Have you heard the new song about the bottles of bear?
+
+for bottle_number in range (99, 0, -1):
+    print "{0} bottles of bear on the wall. {0} bottles of bear... \n If one of those bottles should happen to fall {1} bottles of bear on the wall.".format(bottle_number, bottle_number-1)
